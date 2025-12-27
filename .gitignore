@@ -1,0 +1,7 @@
+*.jpg
+*.png
+scripts/__pycache__/
+scripts/3dpose.py
+scripts/calculate_offset.py
+scripts/edge_matching.py
+main.py
