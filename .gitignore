@@ -5,3 +5,8 @@ scripts/3dpose.py
 scripts/calculate_offset.py
 scripts/edge_matching.py
 main.py
+calibration/
+controllers/
+matching/
+devices/
+data/
