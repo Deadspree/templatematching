@@ -7,12 +7,12 @@ import time
 def load_images():
     """Load template and target images"""
     # Load template edge image
-    template_path = r"C:\Users\Admin_PC\Desktop\robot\Pattern_detection\scripts\template_edge.png"
+    template_path = r"C:\Users\Admin_PC\Desktop\robot\Pattern_detection\input\template_edge.png"
     template = cv2.imread(template_path, cv2.IMREAD_GRAYSCALE)
 
     # Load target image
     target_path = (
-        r"C:\Users\Admin_PC\Desktop\robot\Pattern_detection\input\2d_01.jpg"
+        r"C:\Users\Admin_PC\Desktop\robot\Pattern_detection\input\target_22.jpg"
     )
     target = cv2.imread(target_path, cv2.IMREAD_GRAYSCALE)
     target = cv2.medianBlur(target, 5)
@@ -428,7 +428,7 @@ def main():
         for i, (x, y, w, h, score, angle) in enumerate(matches)
     ]
 
-    json_output_path = r"C:\Users\Admin_PC\Desktop\robot\Pattern_detection\output\data\2d_01.json"
+    json_output_path = r"C:\Users\Admin_PC\Desktop\robot\Pattern_detection\output\data\target_22.json"
     with open(json_output_path, "w") as json_file:
         json.dump(matches_data, json_file, indent=4)
     print(f"\nMatches saved to JSON: {json_output_path}")
@@ -450,7 +450,7 @@ def main():
     cv2.imshow("Matching Results", result_img)
 
     # Save results
-    output_path = r"C:\Users\Admin_PC\Desktop\robot\Pattern_detection\output\images\2d_01.png"
+    output_path = r"C:\Users\Admin_PC\Desktop\robot\Pattern_detection\output\images\target_22.png"
     cv2.imwrite(output_path, result_img)
     print(f"\nResults saved to {output_path}")
 

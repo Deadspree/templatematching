@@ -93,7 +93,7 @@ def template_gui():
     global img_display, roi, edges, roi_selected, edge_mask, original_img, brush_size
 
     # Load image
-    img_path = r"C:\Users\Admin_PC\Desktop\robot\Pattern_detection\input\template8.jpg"
+    img_path = r"C:\Users\Admin_PC\Desktop\robot\Pattern_detection\input\base_03.jpg"
     img = (
         cv2.imread(img_path, cv2.IMREAD_GRAYSCALE)
         if isinstance(img_path, str)
@@ -149,7 +149,7 @@ def template_gui():
 
         elif key == ord("s") and edges is not None:
             # Save edge image
-            output_path = "template_edge.png"
+            output_path = r"C:\Users\Admin_PC\Desktop\robot\Pattern_detection\input\template_edge.png"
             cv2.imwrite(output_path, edges * edge_mask)
             print(f"Edge template saved to {output_path}")
 

@@ -1,0 +1,25 @@
+@startuml
+title Plane Calibration
+
+actor User
+database Store
+Participant Calibrator
+Participant Camera
+Participant Robot
+
+User -> Calibrator: Take calibration image
+Camera -> Calibrator: charuco.png
+Calibrator -> Store: charuco.png
+User -> Calibrator: Take corner image
+Camera -> Calibrator: base.img
+User -> Calibrator: Edit base.png(delete, change brush size)
+Calibrator -> Calibrator: template.png
+Calibrator -> Store: base.png, template.png
+User -> Calibrator: Start plane calibration
+Store -> Calibrator: plane.png
+Robot -> Calibrator: pose
+Calibrator -> Calibrator: plane.png,template.png,base.png,pose -> T_base_plane
+Calibrator -> Store: T_base_plane
+
+
+@enduml

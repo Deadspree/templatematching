@@ -1,0 +1,18 @@
+@startuml
+title Extract
+
+actor user
+database Storage
+participant Calibrator
+participant Camera
+participant Robot
+
+
+user -> Calibrator: Matching request
+camera -> Calibrator: Capture image
+user -> Calibrator: Choose ROI
+user -> Calibrator: Edit ROI edges
+Calibrator -> Storage: Save edge template
+
+    
+@enduml
